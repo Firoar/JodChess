@@ -15,7 +15,7 @@ const ChangeTheGameState = (game_state, arr) => {
     Current_Game_Psoition[i][j] = color === "white" ? "wN" : "bN";
 
     if (color === "white") {
-      IMAGE.src = `../assets/white-knight.png`;
+      IMAGE.src = `/assets/white-knight.png`;
     } else {
       IMAGE.src = `../assets/black-knight.png`;
     }
