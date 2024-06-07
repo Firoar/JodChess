@@ -53,6 +53,7 @@ const ChangeTheGameState = (game_state, arr) => {
     IMAGE.classList.add(`${color}`, `${color}-queen`, `img`);
     // box.innerHTML = IMAGE;
   }
+  box.innerHTML = "";
   box.appendChild(IMAGE.cloneNode(true));
 
   return Current_Game_Psoition;
