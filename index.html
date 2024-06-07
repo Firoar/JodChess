@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jod Chess engine</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="body">
+      <button class="Rotate" style="margin-left: 20%">Rotate</button>
+      <div class="container divToRotate">
+        <div class="row">
+          <div class="box empty"></div>
+
+          <div class="box symbol _a rotate-180">a</div>
+          <div class="box symbol _b rotate-180">b</div>
+          <div class="box symbol _c rotate-180">c</div>
+          <div class="box symbol _d rotate-180">d</div>
+          <div class="box symbol _e rotate-180">e</div>
+          <div class="box symbol _f rotate-180">f</div>
+          <div class="box symbol _g rotate-180">g</div>
+          <div class="box symbol _h rotate-180">h</div>
+          <div class="box empty"></div>
+        </div>
+        <div class="row">
+          <div class="box symbol _8">8</div>
+          <div class="box box_a8"></div>
+          <div class="box box_b8"></div>
+          <div class="box box_c8"></div>
+          <div class="box box_d8"></div>
+          <div class="box box_e8"></div>
+          <div class="box box_f8"></div>
+          <div class="box box_g8"></div>
+          <div class="box box_h8"></div>
+          <div class="box symbol _8 rotate-180">8</div>
+        </div>
+        <div class="row">
+          <div class="box symbol _7">7</div>
+          <div class="box box_a7"></div>
+          <div class="box box_b7"></div>
+          <div class="box box_c7"></div>
+          <div class="box box_d7"></div>
+          <div class="box box_e7"></div>
+          <div class="box box_f7"></div>
+          <div class="box box_g7"></div>
+          <div class="box box_h7"></div>
+          <div class="box symbol _7 rotate-180">7</div>
+        </div>
+        <div class="row">
+          <div class="box symbol _6">6</div>
+          <div class="box box_a6"></div>
+          <div class="box box_b6"></div>
+          <div class="box box_c6"></div>
+          <div class="box box_d6"></div>
+          <div class="box box_e6"></div>
+          <div class="box box_f6"></div>
+          <div class="box box_g6"></div>
+          <div class="box box_h6"></div>
+          <div class="box symbol _6 rotate-180">6</div>
+        </div>
+        <div class="row">
+          <div class="box symbol _5">5</div>
+          <div class="box box_a5"></div>
+          <div class="box box_b5"></div>
+          <div class="box box_c5"></div>
+          <div class="box box_d5"></div>
+          <div class="box box_e5"></div>
+          <div class="box box_f5"></div>
+          <div class="box box_g5"></div>
+          <div class="box box_h5"></div>
+          <div class="box symbol _5 rotate-180">5</div>
+        </div>
+        <div class="row">
+          <div class="box symbol _4">4</div>
+          <div class="box box_a4"></div>
+          <div class="box box_b4"></div>
+          <div class="box box_c4"></div>
+          <div class="box box_d4"></div>
+          <div class="box box_e4"></div>
+          <div class="box box_f4"></div>
+          <div class="box box_g4"></div>
+          <div class="box box_h4"></div>
+          <div class="box symbol _4 rotate-180">4</div>
+        </div>
+        <div class="row">
+          <div class="box symbol _3">3</div>
+          <div class="box box_a3"></div>
+          <div class="box box_b3"></div>
+          <div class="box box_c3"></div>
+          <div class="box box_d3"></div>
+          <div class="box box_e3"></div>
+          <div class="box box_f3"></div>
+          <div class="box box_g3"></div>
+          <div class="box box_h3"></div>
+          <div class="box symbol _3 rotate-180">3</div>
+        </div>
+        <div class="row">
+          <div class="box symbol _2">2</div>
+          <div class="box box_a2"></div>
+          <div class="box box_b2"></div>
+          <div class="box box_c2"></div>
+          <div class="box box_d2"></div>
+          <div class="box box_e2"></div>
+          <div class="box box_f2"></div>
+          <div class="box box_g2"></div>
+          <div class="box box_h2"></div>
+          <div class="box symbol _2" rotate-180>2</div>
+        </div>
+        <div class="row">
+          <div class="box symbol _1">1</div>
+          <div class="box box_a1"></div>
+          <div class="box box_b1"></div>
+          <div class="box box_c1"></div>
+          <div class="box box_d1"></div>
+          <div class="box box_e1"></div>
+          <div class="box box_f1"></div>
+          <div class="box box_g1"></div>
+          <div class="box box_h1"></div>
+          <div class="box symbol _1 rotate-180">1</div>
+        </div>
+        <div class="row">
+          <div class="box empty"></div>
+          <div class="box symbol _a">a</div>
+          <div class="box symbol _b">b</div>
+          <div class="box symbol _c">c</div>
+          <div class="box symbol _d">d</div>
+          <div class="box symbol _e">e</div>
+          <div class="box symbol _f">f</div>
+          <div class="box symbol _g">g</div>
+          <div class="box symbol _h">h</div>
+          <div class="box empty"></div>
+        </div>
+      </div>
+
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <!-- <span class="close">&times;</span> -->
+          <p style="text-align: center">Promote to ?</p>
+          <div class="btns">
+            <button class="modal-button" id="button1">
+              <img src="./assets/white-queen.png" alt="queen" class="img" />
+            </button>
+            <button class="modal-button" id="button2">
+              <img src="./assets/white-rook.png" alt="rook" class="img moved" />
+            </button>
+            <button class="modal-button" id="button3">
+              <img src="./assets/white-knight.png" alt="knight" class="img" />
+            </button>
+            <button class="modal-button" id="button4">
+              <img src="./assets/white-bishop.png" alt="bishop" class="img" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- <script type="module" src="board.js"></script> -->
+  <!-- <script type="module" src="arrangePieces.js"></script> -->
+  <script type="module" src="moves.js"></script>
+  <script src="./utilities/RotateBoard.js"></script>
+</html>
