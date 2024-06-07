@@ -215,12 +215,14 @@ function RunGame() {
               const winner = Turn === "white" ? "black" : "white";
               original_color();
               alert(`${Turn} is checkmated !!!\n${winner} wins :)`);
+              removeAllEventListeners() 
             }
           } else {
             // console.log(`No , no check for ${Turn} king`);
             if (!isThereaMovePossible(game_state, Turn, enpassnt_history)) {
               original_color();
               alert(`Stale,mate !!!\nDraw`);
+              removeAllEventListeners() 
             }
             // Tell_me_when_there_is_a_check = [];
           }
@@ -250,6 +252,13 @@ function getMeClickedTo(event, BlueBoxes) {
     }
   }
   return undefined;
+}
+
+function removeAllEventListeners() {
+  boxes.forEach((box) => {
+    const newBox = box.cloneNode(true);
+    box.parentNode.replaceChild(newBox, box);
+  });
 }
 
 RunGame();
