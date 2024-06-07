@@ -1,4 +1,4 @@
-import ChangeTheGameState from "./ChangeTheGameState.js";
+import ChangeTheGameState from "../ChangeTheGameState.js";
 import CheckForPawnPromotion from "./CheckForPawnPromotion.js";
 
 function checkForPawnPromotionAndHandleModal(game_state, Turn) {
